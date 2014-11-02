@@ -29,12 +29,12 @@ module Barby
           boolean_groups.reverse_each do |groups|
             groups.each do |bar,amount|
               if bar
-                pdf.move_to(xpos, ypos).
-                  line_to(xpos, ypos+xdim).
-                  line_to(xpos+(xdim*amount), ypos+xdim).
-                  line_to(xpos+(xdim*amount), ypos).
-                  line_to(xpos, ypos).
-                  fill
+                pdf.move_to(xpos, ypos)
+                  pdf.line_to(xpos, ypos+xdim)
+                  pdf.line_to(xpos+(xdim*amount), ypos+xdim)
+                  pdf.line_to(xpos+(xdim*amount), ypos)
+                  pdf.line_to(xpos, ypos)
+                  pdf.fill
               end
               xpos += (xdim*amount)
             end
@@ -44,12 +44,12 @@ module Barby
         else
           boolean_groups.each do |bar,amount|
             if bar
-              pdf.move_to(xpos, ypos).
-                line_to(xpos, ypos+height).
-                line_to(xpos+(xdim*amount), ypos+height).
-                line_to(xpos+(xdim*amount), ypos).
-                line_to(xpos, ypos).
-                fill
+              pdf.move_to(xpos, ypos)
+                pdf.line_to(xpos, ypos+height)
+                pdf.line_to(xpos+(xdim*amount), ypos+height)
+                pdf.line_to(xpos+(xdim*amount), ypos)
+                pdf.line_to(xpos, ypos)
+                pdf.fill
             end
             xpos += (xdim*amount)
           end
